@@ -1,3 +1,113 @@
-Hola a todos
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="./imagenes-grados/darien.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Provincia de Darien</h5>
+              <p class="card-text"> Pre-Kinder</p>
+            </div>
+            <button id="sumarPunto1">Vota aqui</button>
 
-prueba de git hub
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./imagenes-grados/los santos.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Provincia de Los Santos</h5>
+              <p class="card-text">Kinder</p>
+            </div>
+            <button id="sumarPunto2">Vota aqui</button>
+
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./imagenes-grados/colon.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Provincia de Colón</h5>
+              <p class="card-text">1er Grado</p>
+            </div>
+            <button id="sumarPunto3">Vota aqui</button>
+
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <img src="./imagenes-grados/chiriqui.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Provincia de Chiriquí</h5>
+              <p id="prueba2" class="card-text">2do Grado</p>
+            </div>            
+            <button id="sumarPunto4">Vota aqui</button>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes-grados/herrera.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Provincia de Herrera</h5>
+                <p id="jeferson" class="card-text">3er Grado </p>
+              </div>               
+              <button id="sumarPunto5">Vota aqui</button>
+                
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes-grados/bocas del toro.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Provincia Bocas del Toro</h5>
+                <p class="card-text">4to Grado</p>
+              </div>              
+            <button id="sumarPunto6">Vota aqui</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes-grados/cocle.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Provincia de Coclé</h5>
+                <p class="card-text">5to Grado</p>
+              </div>              
+            <button id="sumarPunto7">Vota aqui</button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="./imagenes-grados/veraguas.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Provincia de Veraguas</h5>
+                <p class="card-text">6to Grado</p>
+              </div>              
+            <button id="sumarPunto8">Vota aqui</button>
+            </div>
+          </div> 
+      </div>
+      
+  <script>
+    let contador = document.getElementById("contador");
+    let cuenta = localStorage.getItem("cuenta");
+
+    if (cuenta) {
+      contador.innerText = cuenta;
+    } else {
+      contador.innerText = "0";
+    }
+  </script>
+</body>
+</html>
+
