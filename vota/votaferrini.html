@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vota Ferrini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Vota Ferrini</h1>
+    </header>
+    <main>
+        <!-- Contenido de la página de votación -->
+    <div id="votacionForm">
+        <div class="card">
+            <img src="g1.jpg" alt="Opción 1">
+            <div class="card-body">
+                <h5 class="card-title">Pre kinder</h5>
+                <p class="card-text">Representando la provincia de Darien</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="Darien">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="g2.jpg" alt="Opción 2">
+            <div class="card-body">
+                <h5 class="card-title">Kinder</h5>
+                <p class="card-text">Representando la provincia de Los Santos</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="los santos">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="g3.jpg" alt="Opción 3">
+            <div class="card-body">
+                <h5 class="card-title">Primero</h5>
+                <p class="card-text">Representando la provincia de Colon</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="colon">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="g4.jpg" alt="Opción 3">
+            <div class="card-body">
+                <h5 class="card-title">Segundo</h5>
+                <p class="card-text">Representando a la provinia de Chiriqui</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="Chiriqui">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="g5.jpg" alt="Opción 3">
+            <div class="card-body">
+                <h5 class="card-title">Tercero</h5>
+                <p class="card-text">Representando la provincia de Herrera</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="herrera">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="g6.jpg" alt="Opción 3">
+            <div class="card-body">
+                <h5 class="card-title">Cuarto</h5>
+                <p class="card-text">Representando la provincia de Bocas del Toro</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="bocas del toro">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="g7.jpg" alt="Opción 3">
+            <div class="card-body">
+                <h5 class="card-title">Quinto</h5>
+                <p class="card-text">Representando a la provincia de Cocle</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="cocle">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="g8.jpg" alt="Opción 3">
+            <div class="card-body">
+                <h5 class="card-title">Sexto</h5>
+                <p class="card-text">Representando a la provincia de veraguas</p>
+                <form class="votacionForm">
+                    <input type="hidden" name="opcion" value="veraguas">
+                    <button type="submit">Votar</button>
+                </form>
+            </div>
+        </div>
+    </div>    
+        <!-- Agrega más tarjetas según sea necesario -->
+    </main>
+
+    <footer>
+        <p>© 2023 Vota Ferrini. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById("votacionForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const opcionSeleccionada = formData.get("opcion");
+
+            // Simulamos un conteo de votos local
+            const conteoVotos = JSON.parse(localStorage.getItem("conteoVotos") || "{}");
+            conteoVotos[opcionSeleccionada] = (conteoVotos[opcionSeleccionada] || 0) + 1;
+            localStorage.setItem("conteoVotos", JSON.stringify(conteoVotos));
+
+            // Mostrar un mensaje de agradecimiento después de votar
+            alert("¡Gracias por votar!");
+
+            // Reiniciar el formulario de votación
+            event.target.reset();
+        });
+    </script>
+
+</body>
+
+</html>

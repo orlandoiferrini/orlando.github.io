@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votaferrini</title>
+</head>
+
+<body>
+    <h1>Votaferrini</h1>
+    <div id="conteo-votos">
+        <!-- Aquí se mostrará el conteo de votaciones -->
+    </div>
+
+    <button id="resetButton">Reiniciar Votos</button>
+
+    <script>
+        function mostrarConteoVotos(votos) {
+            const conteoDiv = document.getElementById("conteo-votos");
+            conteoDiv.innerHTML = "<h2>Conteo de Votos</h2>";
+
+            // Ordenar las opciones por la cantidad de votos de mayor a menor
+            const opcionesOrdenadas = Object.keys(votos).sort((a, b) => votos[b] - votos[a]);
+
+            // Mostrar las opciones ordenadas en la página
+            opcionesOrdenadas.forEach(opcion => {
+                const votosCantidad = votos[opcion];
+                const p = document.createElement("p");
+                p.textContent = opcion + ": " + votosCantidad + " votos";
+                conteoDiv.appendChild(p);
+            });
+        }
+
+        // Función para reiniciar los votos almacenados en el LocalStorage
+        function reiniciarVotos() {
+            const conteoVotos = {};
+            localStorage.setItem("conteoVotos", JSON.stringify(conteoVotos));
+            mostrarConteoVotos(conteoVotos);
+        }
+
+        // Obtener el conteo de votos almacenado en el LocalStorage y mostrarlo al cargar la página
+        const conteoVotos = JSON.parse(localStorage.getItem("conteoVotos") || "{}");
+        mostrarConteoVotos(conteoVotos);
+
+        // Agregar evento al botón de reinicio
+        document.getElementById("resetButton").addEventListener("click", reiniciarVotos);
+    </script>
+</body>
+
+</html>
